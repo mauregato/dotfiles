@@ -48,6 +48,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "xterm", "-bc","-bg", "black", "-fg", "white", "-fs", "12", "-fa", "'Monospace'",  NULL };
+static const char *lock[] = { "xscreensaver-command", "-lock", NULL };
 /* static const char *termcmd[]  = { "xterm", "-fg black", "-bg white", "-bc", NULL }; */
 
 static Key keys[] = {
@@ -75,6 +76,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+        { MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lock } },		
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
